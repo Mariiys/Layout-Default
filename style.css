@@ -1,0 +1,36 @@
+:root{
+    --font_title:"Cormorant SC",serif;
+    --font-txt:"Theano";
+    --menu-font:"Darker Grotesque",sans-serif;
+    --color-ftMenu:rgba(41,47,45,1);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap);
+@font-face {
+    font-family: 'Theano';
+    src: url(font/TheanoDidot-Regular.woff) format('woff'),
+         url(font/TheanoDidot-Regular.woff2) format('woff2');
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    min-height: 85vh;
+}
+ 
+
+
+
+@media screen and (max-width:768px) {
+    
+    
+    body,main,section{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        min-height: 100vh;
+    }
+}
