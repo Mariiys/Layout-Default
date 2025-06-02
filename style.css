@@ -494,8 +494,9 @@ footer{
 
 
 footer svg{
-    height: 20vh;
+    height: 30px;
     margin-left: -5rem;
+    
 }
 
 
@@ -512,17 +513,141 @@ footer a{
     margin-bottom: 1rem;
 }
 
-.contato{
-    display: flex;
-    flex-direction: column;
+.links-r{
+    display: grid;
+    grid-template-columns: 12rem;
+    row-gap: 0.2rem;
+    height: 8rem; 
+    align-self: center;
+    margin-bottom: 4rem;   
 }
 
 
+
+.logo-footer{
+    height: 20vh;
+    width: 22vw;
+    margin-right: 0.5rem;
+}
+
+
+.contato{
+    display: grid;
+    grid-template-columns: 12rem;
+    height: 8rem; 
+    align-self: center;
+    margin-bottom: 4rem;
+}
+
+.contato h5{
+    font-family: var(--font-txt);
+    font-weight: 400;
+    text-align: right;
+    
+}
+.contato>h6{
+    position: relative;
+    top: 1rem;
+    left: -2rem;
+}
+
+.contato >.mail{
+    display: flex;
+    justify-self: center;
+}
+
+.contato> .whats-contato{
+    position: relative;
+    top: -2.3rem;
+    left: 8.5rem;
+    
+}
 
 .map{
     text-align: end;
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    margin-top: 3rem;
 }
 
+.map> p{
+    padding: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-family: var(--font-txt);
+    
+
+}
+
+
+.map>iframe{
+    height: 16rem;
+    width: 16rem;
+}
+
+footer .map> h5{
+    
+    text-align: center;
+    font-family: var(--menu-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: relative;
+    right: -25rem;
+    top: -2rem;
+    justify-self: flex-end;
+ 
+}
+footer  .map> h6{
+    
+    text-align: center;
+    font-family: var(--menu-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    position: relative;
+    right: -20rem;
+    top: -1rem;
+    width: fit-content;
+    justify-self: flex-end;
+    
+ 
+}
+
+.map>p{
+    font-family: var(--menu-font);
+    font-weight: 400;
+    font-size: 0.8rem;
+    width: 20rem;
+    margin-right: 6rem;
+}
+
+
+p.crd{
+    font-family: var(--menu-font);
+    position: relative;
+    top: 1.7rem;
+    font-size: 0.7rem;
+    width: 100%;
+    text-align: center;
+    height: fit-content;
+    background-color: #f7f7f6;
+    justify-self: flex-end;
+}
+
+div a.credito{
+    font-family: var(--menu-font);
+     font-size: 0.7rem;
+    width: 100%;
+    text-decoration: none;
+    color: #ccc;
+    background-color: rgba(32, 26, 22, 1);
+}
+
+div.div-footer{
+    width: 100%;
+    background-color: rgba(32, 26, 22, 1);
+    text-align: center;
+}
 .w-contato a{
     background-color: transparent;
     border: none;
