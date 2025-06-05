@@ -67,7 +67,7 @@ header{
 nav{
     position: fixed;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     top: 0;
     right: 0;
     left: 0;
@@ -398,7 +398,7 @@ margin-left: 30%;
 }
 
 .box-team .card-team >img{
-        height: 15rem;
+        height: 25rem;
         object-fit: fill;
         border-radius: 0.2rem;
         box-shadow: 9.91px 9.91px 15px #E1E1E0, -9.91px -9.91px 15px #FFFFFF;
@@ -423,6 +423,9 @@ margin-left: 30%;
     border-radius: 1rem;
     
 }
+.section-team a>i{
+   background-color: rgba(47, 47, 46, 1);
+}
 
 .w-contato {
   position: fixed;
@@ -446,11 +449,24 @@ margin-left: 30%;
 
 .placeHolder{
     border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    height: 24vh;
     
 }
 
+
+
 .placeHolder svg,path{
     height: 8rem;
+    width: 8rem;
+    position: relative;
+    z-index: 3;
+    background: rgba(20, 20, 20, 0.39);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
 }
 
 .para-empr img{
@@ -554,10 +570,12 @@ margin-left: 30%;
 .footer-column p a {
   text-decoration: none;
   color: #1a1a1a;
+  font-family: 'Georgia', serif;
 }
 
 .footer-column a:hover {
   text-decoration: underline;
+  text-decoration-color: #1a1a1a;
 }
 
 .footer-column p {
@@ -565,11 +583,13 @@ margin-left: 30%;
 }
 
 .footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   background-color: #e0e5e7;
   text-align: center;
-  padding: 15px 10px;
   font-size: 14px;
-  margin-top: 30px;
+  height: 6vh;
 }
 
 .footer iframe {
@@ -578,6 +598,15 @@ margin-left: 30%;
   height: 200px;
   border: none;
 }
+
+.footer-bottom>a{
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 12px;
+    
+}
+
+
 
 /* Responsivo */
 @media (max-width: 768px) {
