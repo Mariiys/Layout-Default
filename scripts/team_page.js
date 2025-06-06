@@ -1,24 +1,28 @@
-const secoes = document.querySelectorAll('.secao');
-const anterior = document.getElementById('anterior');
-const proximo = document.getElementById('proximo');
+ let indiceAtual = 0;
+    const membros = document.querySelectorAll('.membro');
+    const miniaturas = document.querySelectorAll('.miniatura');
 
-let indiceAtual = 0;
+    function atualizarVisibilidade() {
+      membros.forEach((secao, index) => {
+        secao.classList.toggle('ativo', index === indiceAtual);
+      });
 
-function mostrarSecao(index) {
-  secoes.forEach((secao, i) => {
-    secao.classList.toggle('visivel', i === index);
-  });
-}
+      miniaturas.forEach((thumb, index) => {
+        thumb.classList.toggle('ativa', index === indiceAtual);
+      });
+    }
 
-anterior.addEventListener('click', () => {
-  indiceAtual = (indiceAtual - 1 + secoes.length) % secoes.length;
-  mostrarSecao(indiceAtual);
-});
+    function avancar() {
+      indiceAtual = (indiceAtual + 1) % membros.length;
+      atualizarVisibilidade();
+    }
 
-proximo.addEventListener('click', () => {
-  indiceAtual = (indiceAtual + 1) % secoes.length;
-  mostrarSecao(indiceAtual);
-});
+    function voltar() {
+      indiceAtual = (indiceAtual - 1 + membros.length) % membros.length;
+      atualizarVisibilidade();
+    }
 
-// Mostrar a primeira seção ao carregar
-mostrarSecao(indiceAtual);
+    function irPara(indice) {
+      indiceAtual = indice;
+      atualizarVisibilidade();
+    }

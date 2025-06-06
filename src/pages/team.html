@@ -1,59 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/team_style.css">
+    <script src="https://kit.fontawesome.com/b3f18d04cb.js" crossorigin="anonymous"></script>
     
     <title>Document</title>
 </head>
 
 <body>
 
-  <div class="container">
-    <!-- Seções (apenas uma visível por vez) -->
-    <div class="secao visivel">
-      <div class="foto" style="background-image: url('foto1.jpg');"></div>
-      <div class="info">
-        <h2>lorem</h2>
-        <p><strong>CRP 09/16233</strong><br>Psicóloga Clínica e Neuropsicóloga</p>
-        <blockquote>
-          Sou psicóloga clínica com especialização em Terapia Cognitivo-Comportamental...
-        </blockquote>
-      </div>
-    </div>
 
-    <div class="secao">
-      <div class="foto" style="background-image: url('foto2.jpg');"></div>
-      <div class="info">
-        <h2>CARLOS SOUZA</h2>
-        <p><strong>CRP 09/11223</strong><br>Psicólogo Clínico</p>
-        <blockquote>
-          Especialista em terapia sistêmica, atendimento para adultos e casais...
-        </blockquote>
-      </div>
-    </div>
+  <nav class="logo">
 
-    <div class="secao">
-      <div class="foto" style="background-image: url('foto3.jpg');"></div>
-      <div class="info">
-        <h2>ANA CLARA LIMA</h2>
-        <p><strong>CRP 09/15478</strong><br>Psicóloga Infantil</p>
-        <blockquote>
-          Psicóloga com foco em crianças e adolescentes. Atendimento humanizado...
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- Botões de navegação -->
-    <div class="controles">
-      <button id="anterior">&#8592;</button>
-      <button id="proximo">&#8594;</button>
-    </div>
+  </nav>
+   <main>
+  <div class="intro">
+    <h1>Nossa Equipe</h1>
+    <p>
+      Cada membro de nossa equipe é altamente qualificado, com muitos anos de experiência e sempre em busca de especializações.
+      Garantindo que você esteja sempre em mãos seguras e recebendo o melhor cuidado possível.
+    </p>
   </div>
-<script src="/scripts/team_page.js"></script>
 
+  <!-- Seções dos membros -->
+  <section class="membro ativo" id="membro-0">
+    <div class="foto-central">
+      <img src="/img/Patricia.jpg" alt="patricia nadia de morais" />
+    </div>
+    <div class="descricao">
+      <h2>Marcela Sterchile</h2>
+      <small>CRP-09/19069<br>Neuropsicologia</small>
+      <p>
+       <i class="fa-solid fa-quote-left fa-2xl"></i> Especialista em avaliação neuropsicológica e psicoterapia com foco em adultos.</p>
+    </div>
+  </section>
+
+  <section class="membro" id="membro-1">
+    <div class="foto-central">
+      <img src="/img/Múcio.jpg" alt="João Souza" />
+    </div>
+    <div class="descricao">
+      <h2>João Souza</h2>
+      <small>CRP-09/18023<br>Psicologia Clínica</small>
+      <p>
+        <i class="fa-solid fa-quote-left fa-2xl"></i>Atua com psicoterapia cognitivo-comportamental e atende adolescentes e adultos.</p>
+    </div>
+  </section>
+
+  <section class="membro" id="membro-2">
+    <div class="foto-central">
+      <img src="/img/Marcella.jpg" alt="Ana Paula Lima" />
+    </div>
+    <div class="descricao">
+      <h2>Ana Paula Lima</h2>
+      <small>CRP-09/21034<br>Psicopedagogia</small>
+      <p>
+        <i class="fa-solid fa-quote-left fa-2xl"></i>Foco em dificuldades de aprendizagem, TDAH e orientação para pais.</p>
+    </div>
+  </section>
+
+  <!-- Botões de navegação -->
+ 
+</main>
+<div class="footer-page">
+
+  <!-- Miniaturas -->
+  <div class="miniaturas">
+    <img src="foto1.jpg" class="miniatura ativa" onclick="irPara(0)">
+    <img src="foto2.jpg" class="miniatura" onclick="irPara(1)">
+    <img src="foto3.jpg" class="miniatura" onclick="irPara(2)">
+  </div>
+
+   <div class="botoes">
+    <button onclick="voltar()">&#8592;</button>
+    <button onclick="avancar()">&#8594;</button>
+  </div>
+</div>
 </body>
-
-
+<script src="/scripts/team_page.js"></script>
 </html>

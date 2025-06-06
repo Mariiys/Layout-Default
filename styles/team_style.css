@@ -1,80 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  justify-content: center;
-  align-content: center;
-  max-height: 100vh;
-  overflow-y: hidden;
+  font-family: 'Georgia', serif;
+  background: #f4f4f4;
+  color: #333;
+  min-height: 100vh;
 }
 
-.container {
-  max-width: 1000px;
+nav {
+  border-bottom: #333 0.05rem solid;
   width: 100%;
-  margin: auto;
-  padding: 40px;
-  height: 100%;
-  background: url(/img/teamPage-bg.webp) no-repeat center center;
-  background-size: cover;
-  object-fit: fill;
-  position: relative;
+  height: 11vh;
 }
 
-.secao {
+main {
+  display: flex;
+  flex-direction: row; /* <== Garantido para Desktop */
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Intro */
+.intro {
+  padding: 0.7rem;
+  width: 30%;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Membro */
+.membro {
   display: none;
-  align-items: center;
-  gap: 40px;
-  background-color: white;
-  padding: 30px;
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-.secao.visivel {
-  display: flex;
-  
-}
-
-.foto {
-  width: 300px;
-  height: 350px;
-  display: flex;
-  justify-self: center;
-  background-size: cover;
-  background-position: center;
-  transform: rotate(-5deg);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  border-radius: 10px;
-}
-
-.info {
+  max-width: 55rem;
+  margin: 2.5rem auto;
+  gap: 2.5rem;
+  padding: 0 1.25rem;
   flex: 1;
 }
 
-.info h2 {
-  margin: 0;
-  font-size: 1.8em;
+.membro.ativo {
+  display: flex;
 }
 
-.info p {
-  margin: 10px 0;
-}
-
-blockquote {
-  font-style: italic;
-  color: #444;
-  margin-top: 15px;
-}
-
-.controles {
+.foto-central {
+  flex: 1;
   text-align: center;
-  margin-top: 20px;
+  background-color: #555;
 }
 
-.controles button {
-  font-size: 1.5em;
-  padding: 10px 20px;
+.foto-central img {
+  width: 19rem;
+  transform: rotate(-6deg);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.descricao {
+  flex: 2;
+  text-align: center;
+}
+
+.descricao h2 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.descricao small {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.descricao p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Botões */
+.botoes {
+  text-align: center;
+  padding-right: 7rem;
+}
+
+.botoes button {
+  background: #ddd;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  font-size: 1.2rem;
   margin: 0 10px;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botoes button:hover {
+  background: #bbb;
+}
+
+/* Miniaturas */
+.miniaturas {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 6vh 0.1rem;
+  flex-wrap: wrap;
+}
+
+.miniatura {
+  width: 4rem;
+  height: 5.25rem;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s, transform 0.3s;
+}
+
+.miniatura:hover {
+  transform: scale(1.05);
+}
+
+.miniatura.ativa {
+  border: 2px solid #999;
+}
+
+/* Footer */
+.footer-page {
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 3rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  .intro {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .membro.ativo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foto-central img {
+    width: 80%;
+    transform: rotate(-3deg);
+  }
+
+  .descricao {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .botoes {
+    padding-right: 0;
+  }
+
+  .footer-page{
+    display: flex;
+    flex-direction: column;
+  }
 }
