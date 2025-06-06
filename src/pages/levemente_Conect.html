@@ -30,9 +30,39 @@ acolhedora, para pessoas que buscam apoio psicológico tanto no Brasil quanto fo
             cuidado com a sua saúde mental pode ser mais simples do que você imagina.</p>
     </div>
 
-    <form action="">
+    <form id="formulario">
+    <input type="text" name="nome" placeholder="Nome completo" required><br>
+    <input type="number" name="idade" placeholder="Idade" required><br>
+    <input type="text" name="cidade" placeholder="Cidade/País" required><br>
+    <select name="motivo" required>
+      <option value="">Motivo</option>
+      <option value="Psicoterapia">Psicoterapia</option>
+      <option value="Avaliação">Avaliação</option>
+      <option value="Dúvida">Dúvida</option>
+    </select><br>
+    <input type="text" name="whatsapp" placeholder="WhatsApp" required><br>
+    <textarea name="horarios" placeholder="Disponibilidade" required></textarea><br>
+    <button type="submit">Enviar</button>
+  </form>
 
-        <label for=""></label>
+ <script>
+  document.getElementById("formulario").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = Object.fromEntries(new FormData(e.target).entries());
+
+    const resposta = await fetch("/api/enviar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    const texto = await resposta.text();
+    alert(texto);
+  });
+</script>
         <!-- 📝 Campos do formulário:
  • Nome completo
  • Idade

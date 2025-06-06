@@ -1,0 +1,22 @@
+No Vercel, adicione variáveis de ambiente
+No painel do seu projeto em vercel.com:
+
+Vá em Settings > Environment Variables
+
+Crie:
+
+EMAIL_USER: seuemail@gmail.com
+
+EMAIL_PASS: senha de app (Gmail → https://myaccount.google.com/apppasswords)
+
+💡 5. (Opcional) vercel.json para configurar rotas
+Se você quiser definir o index.html como página inicial:
+
+json
+Copiar
+Editar
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ]
+}

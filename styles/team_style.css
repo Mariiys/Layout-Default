@@ -2,12 +2,21 @@ body {
   margin: 0;
   font-family: sans-serif;
   background-color: #f4f4f4;
+  justify-content: center;
+  align-content: center;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 .container {
   max-width: 1000px;
+  width: 100%;
   margin: auto;
   padding: 40px;
+  height: 100%;
+  background: url(/img/teamPage-bg.webp) no-repeat center center;
+  background-size: cover;
+  object-fit: fill;
   position: relative;
 }
 
@@ -17,17 +26,21 @@ body {
   gap: 40px;
   background-color: white;
   padding: 30px;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .secao.visivel {
   display: flex;
+  
 }
 
 .foto {
   width: 300px;
   height: 350px;
+  display: flex;
+  justify-self: center;
   background-size: cover;
   background-position: center;
   transform: rotate(-5deg);
