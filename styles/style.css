@@ -418,10 +418,13 @@ main{
 }
 
 .info-about{
-   
+    padding: 3rem;
     justify-items: center;
 }
 
+.info-about ul{
+    width: 100%;
+}
 
 .info-about p{
     font-family: var(--font-txt);
