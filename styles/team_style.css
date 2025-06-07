@@ -2,18 +2,88 @@
   box-sizing: border-box;
 }
 
+
+:root{
+    --font_title:"Cormorant SC",serif;
+    --font-txt:"Theano";
+    --menu-font:"Darker Grotesque",sans-serif;
+    --color-ftMenu:rgba(41,47,45,1);
+    --color-off:#abd1c6;
+  --brand-color3:rgba(51,92,110, 1) ;
+  --brand-color2: rgba(78,119,130, 1);
+  --brand-color1:rgba(91,191,190, 1) ;
+  --brand-color0:rgba(247,247,246) ;
+  --font-Menu:"Bebas Neue", sans-serif;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap);
+@font-face {
+    font-family: 'Theano';
+    src: url(font/TheanoDidot-Regular.woff) format('woff'),
+         url(font/TheanoDidot-Regular.woff2) format('woff2');
+}
+
 body {
   margin: 0;
   font-family: 'Georgia', serif;
   background: #f4f4f4;
   color: #333;
-  min-height: 100vh;
+  overflow-y: hidden;
 }
 
 nav {
-  border-bottom: #333 0.05rem solid;
+  border-bottom: #7d7b7b 0.03rem solid;
+  border-radius: 6px;
   width: 100%;
-  height: 11vh;
+  height: 10vh;
+  padding: 0.35rem 1px;
+  display: flex;
+  align-items: center; 
+justify-content: flex-end;
+gap: 3rem;
+padding-right:2rem ;
+  
+}
+
+
+
+
+nav a{
+  text-decoration: none;
+  font-family: var(--font-Menu);
+  color: #333;
+  font-weight: 300;
+  font-size: 14px;
+}
+small{
+  font-size: 1rem;
+}
+
+.placeHolder >svg,path{
+  height: 3.5rem;
+  width: 4.5rem;
+  filter: contrast(0);
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+.button{
+  background-color: var(--brand-color1);
+  height: 2rem;
+  align-content: center;
+  width: fit-content;
+  border-radius: 1rem;
+}
+
+.button>a{
+  padding: 1rem 1rem;
+  font-family: var(--font-Menu);
+  color: #fff;
+
 }
 
 main {
@@ -31,13 +101,18 @@ main {
 }
 
 .intro h1 {
-  font-size: 3rem;
-  color: #555;
+  font-size: 2rem;
+  font-family: var(--font_title);
+  color: var(--color-ftMenu);
+  font-weight: 400;
   margin-bottom: 10px;
 }
 
 .intro p {
-  font-size: 1.1rem;
+  font-family: var(--font-txt);
+  color: var(--color-ftMenu);
+  font-weight: 400;
+  font-size: 1.3rem;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -59,7 +134,8 @@ main {
 .foto-central {
   flex: 1;
   text-align: center;
-  background-color: #555;
+  background-color: rgba(41,47,45,0.3);
+  border-radius: 3px;
 }
 
 .foto-central img {
@@ -82,12 +158,15 @@ main {
 .descricao small {
   display: block;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 400;
+  font-family: var(--font-txt);
 }
 
 .descricao p {
   font-size: 1rem;
   line-height: 1.6;
+    font-weight: 400;
+  font-family: var(--font-txt);
 }
 
 /* Botões */
@@ -97,7 +176,7 @@ main {
 }
 
 .botoes button {
-  background: #ddd;
+  background: #bfbfbf;
   border: none;
   border-radius: 50%;
   padding: 10px 15px;
@@ -116,7 +195,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 1.25rem;
-  padding: 6vh 0.1rem;
+  padding: 1vh 0.1rem;
   flex-wrap: wrap;
 }
 
@@ -136,6 +215,7 @@ main {
 
 .miniatura.ativa {
   border: 2px solid #999;
+  padding: 0.09rem;
 }
 
 /* Footer */
@@ -153,11 +233,20 @@ main {
     flex-direction: column;
   }
 
+  body{
+    overflow-y: auto !important;
+  }
+
   .intro {
     width: 100%;
     padding: 1rem;
   }
 
+
+  .membro{
+    display: flex;
+    flex-direction: column;
+  }
   .membro.ativo {
     flex-direction: column;
     align-items: center;
@@ -179,7 +268,6 @@ main {
   }
 
   .footer-page{
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
 }
