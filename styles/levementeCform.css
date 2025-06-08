@@ -1,0 +1,708 @@
+/* Estilos globais já definidos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font_title: "Cormorant SC", serif;
+    --font-txt: "Theano";
+    --menu-font: "Darker Grotesque", sans-serif;
+    --color-ftMenu: rgba(41, 47, 45, 1);
+    --color-off: #abd1c6;
+    --brand-color3: rgba(51, 92, 110, 1);
+    --brand-color2: rgba(78, 119, 130, 1);
+    --brand-color1: rgba(91, 191, 190, 1);
+    --brand-color0: rgba(247, 247, 246);
+    --font-Menu: "Bebas Neue", sans-serif;
+}
+
+/* Importação de fontes e @font-face */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap);
+@font-face {
+    font-family: 'Theano';
+    src: url(font/TheanoDidot-Regular.woff) format('woff'),
+         url(font/TheanoDidot-Regular.woff2) format('woff2');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f7f6;
+    /* Adiciona um overflow-x: hidden para evitar barras de rolagem horizontais indesejadas */
+    overflow-x: hidden;
+}
+
+/* Esconder as setas de input number (já estava ok) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Animação (já estava ok) */
+.scale-up-ver-top {
+    -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-ver-top {
+    0% { -webkit-transform: scaleY(0.4); transform: scaleY(0.4); -webkit-transform-origin: 100% 0%; transform-origin: 100% 0%; }
+    100% { -webkit-transform: scaleY(1); transform: scaleY(1); -webkit-transform-origin: 100% 0%; transform-origin: 100% 0%; }
+}
+@keyframes scale-up-ver-top {
+    0% { -webkit-transform: scaleY(0.4); transform: scaleY(0.4); -webkit-transform-origin: 100% 0%; transform-origin: 100% 0%; }
+    100% { -webkit-transform: scaleY(1); transform: scaleY(1); -webkit-transform-origin: 100% 0%; transform-origin: 100% 0%; }
+}
+
+/* --- NAV (Navegação) --- */
+nav {
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    /* Adicionado padding horizontal para não grudar nas bordas */
+    padding: 0 15px;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 1.4rem;
+    /* Permite que os links quebrem linha se não houver espaço suficiente */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav .nav-links a, span {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    font-family: var(--menu-font);
+    font-weight: 300;
+    align-content: center;
+    /* Centraliza o texto */
+    text-align: center;
+}
+
+/* --- INTRO Section --- */
+.intro {
+    height: 85vh;
+    justify-items: center;
+    background: linear-gradient(
+        to right,
+        rgb(0 0 0 / .7), rgb(0 0 0 /0)
+    ), url(/img/priscilla-du-preez-aPa843frIzI-unsplash.webp);
+    object-fit: fill; /* `fill` não é uma opção para background-size, use `cover` ou `contain` */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem; /* Será ajustado no mobile */
+    display: flex; /* Para centralizar o conteúdo do intro */
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Alinha o texto à esquerda */
+}
+
+.intro h1, .intro h2 { /* Combinado para aplicar cor a ambos */
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.intro h2 {
+    font-size: 2rem; /* Será ajustado no mobile */
+    position: relative;
+    z-index: 2;
+    left: .8rem;
+    font-family: var(--menu-font);
+    font-weight: 200;
+}
+
+h1 {
+    font-family: var(--menu-font);
+    font-weight: 300;
+}
+
+.intro .fa-solid {
+    position: relative;
+    top: -1rem;
+    margin-right: .1rem;
+    margin-bottom: 1rem;
+}
+
+.color_overlay {
+    position: relative;
+    left: -17.5rem; /* Será ajustado no mobile */
+    top: 6.5rem; /* Será ajustado no mobile */
+    border-radius: 3px;
+    width: 3rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Opcional: display: none; para remover no mobile se não for essencial */
+}
+
+/* --- OUTRO Section --- */
+.outro {
+    clip-path: polygon(0% 0%, 0% 75%, 50% 100%, 100% 75%, 100% 0%);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 0; /* Será ajustado */
+    margin: 0;
+    background: url(/img/watercolor.webp) no-repeat center center;
+    background-size: cover;
+    object-fit: cover; /* `object-fit` não se aplica a background-image */
+    padding: 6rem; /* Será ajustado */
+    inset: 0px auto auto;
+    transform: translateY(-101.588px); /* Será ajustado */
+    width: 100%;
+    height: 60vh; /* Será ajustado */
+    display: flex; /* Para alinhar o texto */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center; /* Centraliza o texto */
+}
+
+#content{
+  display: flex;
+}
+
+.outro p {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: var(--font-txt);
+    font-size: 1.2rem; /* Será ajustado */
+    text-align: unset; /* Revertido para o padrão, mas centralizado pelo pai */
+    max-width: 90%; /* Limita a largura do parágrafo */
+}
+
+/* --- MAIN (Contexto do formulário) --- */
+main {
+    background: url(/img/phone.jpg) no-repeat center center/cover;
+    /* Ajusta min-height para garantir que o background cubra a área mesmo se o conteúdo for pequeno */
+    min-height: 50vh;
+    display: flex; /* Para centralizar o form-container */
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Adiciona padding para telas pequenas */
+}
+
+/* --- FORM CONTAINER --- */
+.form-container {
+    display: flex;
+    height: fit-content;
+    background-color: #f7f7f6;
+    overflow: hidden;
+    padding: 1rem;
+    justify-content: center;
+    width: 60%; /* Será ajustado no mobile */
+    border-radius: 10px; /* Adiciona borda arredondada ao container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    flex-direction: row; /* Padrão desktop */
+}
+
+/* --- LEFT PANEL (Conteúdo ao lado do formulário) --- */
+.left-panel {
+    flex: 1;
+    padding: 60px; /* Será ajustado */
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: center;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+.left-panel h2 {
+    font-size: 5rem; /* Será ajustado */
+    font-weight: bold;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.left-panel p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 40px;
+    max-width: 500px;
+    line-height: 1.5;
+    text-align: center; /* Garante que o parágrafo esteja centralizado */
+}
+
+/* --- FORM (O formulário em si) --- */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Será 1fr no mobile */
+    gap: 20px; /* Será ajustado */
+    height: fit-content;
+    margin-bottom: 8rem; /* Será ajustado */
+    padding: 20px; /* Adiciona padding interno ao formulário */
+}
+
+form input,
+form textarea,
+select {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #000;
+    padding: 10px 5px;
+    font-size: 16px;
+    outline: none;
+    width: 100%;
+}
+
+form textarea {
+    grid-column: 1 / -1;
+    min-height: 80px;
+    resize: vertical;
+}
+
+form label {
+    grid-column: 1 / -1;
+    font-weight: bold;
+    margin-top: 30px; /* Será ajustado */
+    font-size: 1em; /* Tamanho da fonte para labels */
+}
+
+/* --- Botões de Motivo --- */
+.button-group {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    /* Para mobile, permite que os botões quebrem linha ou se alinhem */
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os botões */
+}
+
+.button-group button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    /* Tamanho mínimo para serem facilmente clicáveis no mobile */
+    min-width: 120px;
+}
+
+.button-group button:hover {
+    background-color: #333;
+}
+
+/* Estilo para botão de motivo selecionado */
+.button-group button.selected {
+    background-color: var(--brand-color1); /* Use uma cor de destaque da sua paleta */
+    color: black;
+    border: 1px solid var(--brand-color1);
+}
+
+/* Estilo para o botão de envio desabilitado/habilitado (já estava ok) */
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+    padding: 10px 20px; /* Mantenha o padding para consistência */
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.2);
+}
+
+/* --- Ações do Formulário (botão de enviar e checkbox de termos) --- */
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column; /* Padrão mobile */
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: center; /* Centraliza os itens quando em coluna */
+    gap: 15px; /* Espaço entre o checkbox e o botão */
+}
+
+.back-btn,
+.next-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Faz o botão ocupar toda a largura disponível no mobile */
+    max-width: 250px; /* Limita o tamanho máximo do botão */
+}
+
+.back-btn:hover,
+.next-btn:hover {
+    background-color: #333;
+}
+
+#aceitoTermos {
+    height: 1rem;
+    width: 2rem;
+}
+
+.sc-term {
+    display: flex;
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    align-items: center; /* Alinhar checkbox e label verticalmente */
+    flex-wrap: wrap; /* Permite que o texto do label quebre linha */
+    justify-content: center; /* Centraliza horizontalmente */
+    text-align: center; /* Alinha o texto dentro do label */
+    margin-bottom: 10px; /* Espaço antes do botão */
+}
+
+.label-term {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9em; /* Reduz um pouco o tamanho da fonte */
+}
+
+.label-term a {
+    white-space: nowrap; /* Evita que o link quebre a linha no meio */
+}
+
+
+/* Estilos para a mensagem de sucesso */
+.mensagem-sucesso, .mensagem-erro {
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.5s ease-in-out; /* Transição suave */
+}
+
+.mensagem-sucesso {
+    background-color: #d4edda; /* Fundo verde claro */
+    color: #155724; /* Texto verde escuro */
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem-erro {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24; /* Texto vermelho escuro */
+    border: 1px solid #f5c6cb;
+}
+
+/* Classe para mostrar a mensagem */
+.mensagem-sucesso.show, .mensagem-erro.show {
+    opacity: 1; /* Torna visível */
+    display: block !important; /* Garante que seja exibido */
+}
+
+/* --- FOOTER --- */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza conteúdo no footer */
+    margin-top: 3rem;
+    width: 100%;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0; /* Adiciona padding vertical */
+}
+
+.social-m {
+    display: flex; /* Use flexbox diretamente */
+    flex-direction: row;
+    height: 3rem;
+    gap: 1.59rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px; /* Espaço abaixo dos ícones sociais */
+}
+
+footer a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.links {
+    display: flex;
+    flex-direction: row; /* Coluna no mobile */
+    justify-content: center;
+    margin-left: 0; /* Remove margem lateral */
+    gap: .5rem; /* Menor gap */
+    font-family: var(--menu-font);
+    font-weight: 200;
+    font-size: .8rem; /* Levemente maior para mobile */
+    height: auto; /* Altura automática */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 15px; /* Espaço abaixo dos links */
+}
+
+.terms {
+    display: flex;
+    flex-direction: row; /* Coluna no mobile */
+    justify-content: center;
+    gap: .5rem; /* Menor gap */
+    width: 100%;
+    height: auto; /* Altura automática */
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px; /* Padding para garantir que não grude nas bordas */
+}
+
+.terms a, .terms p { /* Aplica a ambos os elementos dentro de .terms */
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--menu-font);
+    font-size: 11px; /* Um pouco menor para mobile */
+    text-align: center;
+    line-height: 1.4; /* Melhora a legibilidade */
+}
+
+footer .footer-logo > svg {
+    height: 6rem; /* Reduz o tamanho do logo no footer */
+    width: 7.5rem;
+    filter: brightness(0) saturate(100%) invert(1);
+    justify-self: center;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem; /* Adiciona margem abaixo do logo */
+}
+
+/* --- MEDIA QUERIES para Mobile --- */
+/* A media query já estava lá, mas vamos preenchê-la com mais regras */
+@media (max-width: 768px) {
+    /* Ajustes Gerais para Telas Menores */
+    body {
+        font-size: 14px; /* Ajusta o tamanho base da fonte */
+    }
+
+    /* NAV */
+    nav {
+        height: auto; /* Altura automática */
+        padding: 10px 15px;
+        flex-direction: column; /* Menu em coluna */
+        gap: 10px; /* Espaço entre itens */
+        align-items: center; /* Centraliza itens */
+    }
+
+    nav .nav-links {
+        flex-direction: column; /* Links em coluna */
+        gap: 8px; /* Espaço menor entre os links */
+        width: 100%; /* Ocupa a largura total */
+    }
+
+    nav .nav-links a, nav .nav-links span {
+        font-size: 12px; /* Menor tamanho de fonte para links */
+        padding: 5px 0; /* Padding vertical para clique fácil */
+        width: 100%; /* Ocupa a largura total para ser clicável */
+    }
+
+    /* INTRO */
+    .intro {
+        height: 70vh; /* Reduz a altura */
+        padding: 2rem 15px; /* Padding menor */
+        text-align: center; /* Centraliza o texto */
+        align-items: center; /* Centraliza conteúdo */
+    }
+
+    .intro h1 {
+        font-size: 2.5rem; /* Ajusta o tamanho do h1 */
+    }
+
+    .intro h2 {
+        font-size: 1.5rem; /* Ajusta o tamanho do h2 */
+        left: 0; /* Remove o deslocamento */
+        text-align: center; /* Garante centralização */
+    }
+
+    .intro .fa-solid {
+        top: 0; /* Ajusta a posição do ícone */
+        margin-bottom: 0.5rem;
+    }
+
+    .color_overlay {
+        display: none; /* Oculta este elemento no mobile, se não for essencial */
+    }
+
+    /* OUTRO */
+    .outro {
+        height: auto; /* Altura automática */
+        padding: 3rem 15px; /* Padding menor */
+        transform: translateY(0); /* Remove a translação */
+        clip-path: none; /* Pode remover o clip-path complexo no mobile se não for necessário */
+        border: none; /* Remove a borda no mobile */
+        text-align: center;
+    }
+
+    .outro p {
+        font-size: 1rem; /* Reduz o tamanho da fonte */
+        max-width: 100%; /* Ocupa toda a largura */
+    }
+
+    /* MAIN */
+    main {
+        padding: 15px; /* Padding consistente */
+        min-height: auto; /* Permite que a altura seja definida pelo conteúdo */
+    }
+
+    /* FORM CONTAINER */
+    .form-container {
+        flex-direction: column-reverse; /* Já estava aqui, bom para mobile */
+        height: auto;
+        padding: 15px; /* Padding menor */
+        width: 95%; /* Ocupa mais largura da tela */
+        margin-top: 20px; /* Espaço acima */
+    }
+
+    /* LEFT PANEL */
+    .left-panel {
+        padding: 30px 15px; /* Padding menor */
+        align-items: center;
+    }
+
+    .left-panel h2 {
+        font-size: 2.5rem; /* Reduz o tamanho do h2 */
+        margin-bottom: 15px;
+    }
+
+    .left-panel p {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        margin-bottom: 20px;
+    }
+
+    /* FORM */
+    form {
+        grid-template-columns: 1fr; /* Uma coluna no mobile */
+        gap: 15px; /* Espaçamento menor entre campos */
+        margin-bottom: 2rem; /* Margem menor abaixo do formulário */
+        padding: 15px; /* Padding interno do formulário */
+    }
+
+    form input,
+    form textarea,
+    select {
+        font-size: 14px; /* Reduz o tamanho da fonte dos inputs */
+        padding: 8px 5px; /* Menor padding */
+    }
+
+    form label {
+        margin-top: 15px; /* Menor margem */
+        font-size: 0.9em;
+    }
+
+    /* Botões de Motivo */
+    .button-group {
+        flex-direction: row; /* Mantém linha, mas permite quebra */
+        flex-wrap: wrap;
+        justify-content: center; /* Centraliza */
+        gap: 8px; /* Espaçamento menor */
+    }
+
+    .button-group button {
+        padding: 8px 15px; /* Menor padding */
+        font-size: 13px; /* Menor fonte */
+        min-width: unset; /* Remove min-width, deixa o conteúdo definir */
+        flex-grow: 1; /* Permite que cresçam para preencher o espaço */
+    }
+
+    /* Ações do Formulário */
+    .form-actions {
+        flex-direction: column; /* Coluna no mobile (já estava) */
+        gap: 10px; /* Espaço menor */
+        margin-top: 20px;
+    }
+
+    .back-btn,
+    .next-btn,
+    #botaoEnviar { /* Aplica ao botão de enviar também */
+        width: 100%; /* Ocupa a largura total */
+        max-width: 300px; /* Limita o tamanho máximo */
+        padding: 10px 20px; /* Menor padding */
+        font-size: 15px; /* Menor fonte */
+    }
+
+    .sc-term {
+        height: auto;
+        margin-bottom: 10px;
+        flex-direction: column; /* Checkbox e label em coluna */
+        gap: 5px; /* Espaço entre checkbox e label */
+    }
+
+    .label-term {
+        font-size: 0.85em; /* Ajuste fino do texto dos termos */
+        text-align: center;
+    }
+
+    #aceitoTermos {
+        height: 1.2rem; /* Ajusta o tamanho do checkbox para mobile */
+        width: 1.2rem;
+        margin-right: 0; /* Remove margem direita se estiver em coluna */
+        margin-bottom: 5px; /* Espaço entre checkbox e texto */
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 15px 0; /* Menor padding */
+    }
+
+    .social-m {
+        gap: 1rem; /* Menor espaçamento */
+        margin-bottom: 10px;
+    }
+
+    .links {
+        gap: 0.4rem; /* Menor espaçamento */
+        font-size: 0.7rem;
+        margin-bottom: 10px;
+    }
+
+    .terms {
+        gap: 0.5rem;
+        padding: 8px 10px;
+    }
+
+    .terms a, .terms p {
+        font-size: 10px; /* Menor fonte para termos */
+    }
+
+    footer .footer-logo > svg {
+        height: 5rem; /* Ainda menor o logo no footer mobile */
+        width: 6rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 2rem;
+    }
+    .intro h2 {
+        font-size: 1.2rem;
+    }
+    .left-panel h2 {
+        font-size: 2rem;
+    }
+    .left-panel p {
+        font-size: 13px;
+    }
+    .button-group button {
+        flex-grow: 1; /* Garante que os botões se espalhem se houver espaço */
+    }
+}

@@ -402,13 +402,16 @@ main{
 
 #section3{
     background: url(/img/watercolor.webp) no-repeat center center;
+      clip-path: polygon(0% 0%, 0% 75%, 50% 100%, 100% 75%, 100% 0%);
+    border: 1px solid rgba(0, 0, 0, 0.8);
     background-size: cover;
     height: auto;
     padding: 6rem;
     inset: 0px auto auto;
     transform: translateY(-101.588px);
     display: block;
-    margin-top: 2rem;
+    align-content: center;
+    
 }
 
 .info-about >svg{
@@ -419,6 +422,7 @@ main{
 
 .info-about{
     padding: 3rem;
+    
     justify-items: center;
 }
 
@@ -430,6 +434,7 @@ main{
     font-family: var(--font-txt);
     font-size: 1rem;
     font-weight: 400;
+    align-content: center;
     
 }
 
