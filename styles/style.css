@@ -92,6 +92,12 @@ nav{
     gap: 3rem;
 }
 
+.logo-principal{
+    
+    align-self: center;
+    justify-self: center;
+}
+
 .logo{
     position: fixed;
     display: block;
@@ -99,7 +105,7 @@ nav{
       top: 0;
     right: 0;
     left: 0;
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 nav a{
@@ -187,6 +193,7 @@ nav .agnd{
 
 .txt-overlay{
     position: relative;
+    justify-content: center;
     justify-items: center;
     align-self: center;
     width: 100%;
@@ -199,12 +206,14 @@ nav .agnd{
 .txt-overlay>img{
     height: 30vh;
     width: fit-content;
+    margin: auto 35% auto 35%;
 }
 
 .txt-overlay>p{
     text-align: center;
     width: 50%;
      color: #f7f7f6;
+     font-family: 'inter';
 }
 
 .txt-overlay>h1{
