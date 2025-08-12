@@ -184,7 +184,7 @@ h1 {
 
 /* --- MAIN (Contexto do formulário) --- */
 main {
-    background: url(/img/phone.jpg) no-repeat center center/cover;
+    background: url(/img/webp.webp) no-repeat center center/cover;
     /* Ajusta min-height para garantir que o background cubra a área mesmo se o conteúdo for pequeno */
     min-height: 50vh;
     display: flex; /* Para centralizar o form-container */
