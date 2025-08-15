@@ -1,27 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
-<url>
-  <loc>https://50fb333e.levemente.pages.dev/src/pages/levemente_Conect.html</loc>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://50fb333e.levemente.pages.dev/src/pages/team.html</loc>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://50fb333e.levemente.pages.dev/src/pages/creditos.html</loc>
-  <priority>0.3</priority>
-</url>
-<url>
-  <loc>https://50fb333e.levemente.pages.dev/src/pages/Termos.html</loc>
-  <priority>0.3</priority>
-</url>
-<url>
-  <loc>https://50fb333e.levemente.pages.dev/index.html</loc>
-  <priority>1.0</priority>
-</url>
-<url>
-  <loc></loc>
-  <priority>0.1</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>https://50fb333e.levemente.pages.dev/</loc>
+   </url>
+   <url>
+      <loc>https://50fb333e.levemente.pages.dev/levemente_Conect.html</loc>
+   </url>
+   <url>
+      <loc>https://50fb333e.levemente.pages.dev/creditos.html</loc>
+   </url>
+   <url>
+      <loc>https://50fb333e.levemente.pages.dev/team.html</loc>
+   </url>
+   <url>
+      <loc>https://50fb333e.levemente.pages.dev/Termos.html</loc>
+   </url>
 </urlset>
